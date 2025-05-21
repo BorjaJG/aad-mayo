@@ -1,4 +1,4 @@
-package com.example.aad_mayo.feature.alumno.data.remote
+package com.example.aad_mayo.feature.alumno.data.remote.room
 
 import android.content.Context
 import androidx.room.RoomDatabase

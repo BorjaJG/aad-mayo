@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.aad_mayo.feature.alumno.data.AlumnoSharedPreferencesDataSource
+import com.google.firebase.FirebaseApp
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        FirebaseApp.initializeApp(this)
 
         val prefs = getSharedPreferences("alumnos_prefs", Context.MODE_PRIVATE)
         val dataSource = AlumnoSharedPreferencesDataSource(this, prefs)
