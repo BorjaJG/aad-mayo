@@ -1,4 +1,4 @@
-package com.example.aad_mayo.feature.alumno.data.remote
+package com.example.aad_mayo.feature.alumno.data.remote.room
 
 import androidx.room.Dao
 import androidx.room.Delete
