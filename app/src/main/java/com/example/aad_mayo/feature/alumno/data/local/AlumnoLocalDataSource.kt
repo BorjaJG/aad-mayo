@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import android.util.Log
 import com.example.aad_mayo.R
 import com.example.aad_mayo.feature.alumno.domain.Alumno
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.BufferedReader
@@ -33,9 +32,9 @@ class AlumnoSharedPreferencesDataSource(
         return json.decodeFromString<Alumno>(alumnoJson)
     }
 
-    suspend fun saveAlumno(alumno: Alumno) {
+    suspend fun saveAlumno(alumno: Any) {
         val alumnoJson = json.encodeToString(alumno)
-        sharedPreferences.edit().putString(alumno.id, alumnoJson).apply()
+        sharedPreferences.edit().putString(alumno.toString(), alumnoJson).apply()
         Log.d("AlumnoSP", "Alumno guardado: $alumnoJson")
     }
 
