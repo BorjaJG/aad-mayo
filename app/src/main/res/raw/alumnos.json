@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "name": "Juan",
+    "apellido": "Pérez",
+    "listAsignatura": [
+      {
+        "idAsignatura": "A1",
+        "asignatura": "Matemáticas",
+        "nota": "9.0"
+      }
+    ],
+    "idGrupo": "G1",
+    "grupo": "DAM2",
+    "idCurso": "C1",
+    "curso": "2024",
+    "idMatricula": "M1",
+    "fechaMatriculacion": "2023-09-01",
+    "fechaNacimiento": "2000-01-01"
+  }
+]
