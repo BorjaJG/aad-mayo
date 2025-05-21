@@ -10,15 +10,22 @@ class AlumnoDataRepository(
     private val localDataSource: AlumnoSharedPreferencesDataSource,
     private val remoteDataSource: AlumnoDataRepositoryRemote
 ) : AlumnoRepository {
-    override suspend fun getAlumnoById(id: String): Alumno? {
 
-           // return localDataSource.getAlumnoById(id)
+    override suspend fun getAlumnoById(idAlumno: String): Alumno? {
 
-            return remoteDataSource.getAlumnoById(id)
+        val localResult = localDataSource.getAlumnoById(idAlumno)
+        if (localResult != null) {
+            return localResult
+        }
 
 
+        val remoteResult = remoteDataSource.getAlumnoById(idAlumno)
 
 
+        remoteResult?.let {
+            localDataSource.saveAlumno(it)
+        }
+
+        return remoteResult
     }
-
 }
